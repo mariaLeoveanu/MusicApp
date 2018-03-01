@@ -88,7 +88,6 @@ public class MusicPlayer extends AppCompatActivity {
             public void onClick(View view) {
                 ArrayList<Song> songsInAlbum = album.getSongs();
                 String s = currentSong.getName();
-                Log.v("Index, name: ", ""+i+s);
                 if (i==songsInAlbum.size()-1) {
                     i=0;
                     currentSong = songsInAlbum.get(0);
