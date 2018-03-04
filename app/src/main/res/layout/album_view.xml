@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/album_art_iv"
         android:layout_marginTop="@dimen/dp5"
-        android:textSize="20sp"
-        tools:text="DNA" />
+        android:textSize="@dimen/sp20"
+        tools:text="DAMN" />
 
     <TextView
         android:id="@+id/artist_tv"

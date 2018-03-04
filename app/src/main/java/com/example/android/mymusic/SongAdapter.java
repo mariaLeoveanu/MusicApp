@@ -29,7 +29,7 @@ public class SongAdapter extends ArrayAdapter {
         Song currentSong = (Song) getItem(position);
         //set text view for the current song
 
-        TextView songName = (TextView)songView.findViewById(R.id.song_title);
+        TextView songName = songView.findViewById(R.id.song_title);
         songName.setText(currentSong.getName());
 
         return songView;

@@ -23,7 +23,8 @@ public class MusicPlayer extends AppCompatActivity {
     TextView songName;
     Button backSongs;
     boolean isPlaying = true;
-    int i;
+    int indexCurrentSong;
+
 
 
     @Override
@@ -38,9 +39,9 @@ public class MusicPlayer extends AppCompatActivity {
         backSongs = findViewById(R.id.back_to_songs);
 
         Intent playerIntent = getIntent();
-        i = playerIntent.getIntExtra("Index",-1000); //put -1000 to have an obvious error if i don't get any index through intent
+        indexCurrentSong = playerIntent.getIntExtra("Index",-1000); //put -1000 to have an obvious error if i don't get any index through intent
         album = (Album) playerIntent.getSerializableExtra("CurrentAlbum");
-        currentSong = album.getSongs().get(i);// get album at index i
+        currentSong = album.getSongs().get(indexCurrentSong);// get album at index i
 
         setAlbumContents();
         setPlayPauseIcon();
@@ -88,12 +89,12 @@ public class MusicPlayer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<Song> songsInAlbum = album.getSongs();
-                if (i==songsInAlbum.size()-1) {
-                    i=0; //if on last position, move to the first song in playlist
+                if (indexCurrentSong==songsInAlbum.size()-1) {
+                    indexCurrentSong=0; //if on last position, move to the first song in playlist
                     currentSong = songsInAlbum.get(0);
                 }else {
-                    i++;
-                    currentSong = songsInAlbum.get(i);}
+                    indexCurrentSong++;
+                    currentSong = songsInAlbum.get(indexCurrentSong);}
                 setAlbumContents();
             }
         });
@@ -104,12 +105,12 @@ public class MusicPlayer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<Song> songsInAlbum = album.getSongs();
-                if (i==0) {
-                    i = songsInAlbum.size()-1; //if on first position, get to the last one in the playlist
-                    currentSong = songsInAlbum.get(i);
+                if (indexCurrentSong==0) {
+                    indexCurrentSong = songsInAlbum.size()-1; //if on first position, get to the last one in the playlist
+                    currentSong = songsInAlbum.get(indexCurrentSong);
                 }else {
-                    i--;
-                    currentSong = songsInAlbum.get(i);}
+                    indexCurrentSong--;
+                    currentSong = songsInAlbum.get(indexCurrentSong);}
                 setAlbumContents();
             }
         });

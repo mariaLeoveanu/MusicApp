@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         //creating an array with the albums that have each, one array of songs
         final ArrayList<Album> albums = new ArrayList<>();
-        albums.add(new Album(R.drawable.damn, "DNA", "Kendrick Lamar", 14, songsDNA));
+        albums.add(new Album(R.drawable.damn, "DAMN", "Kendrick Lamar", 14, songsDNA));
         albums.add(new Album(R.drawable.morelife, "More Life", "Drake", 22, songsMoreLife));
         albums.add(new Album(R.drawable.thegetaway, "The Getaway", "Red Hot Chili Peppers",13, songsTheGetAway));
         albums.add(new Album(R.drawable.zaba, "Zaba","Glass Animals", 11, songsZaba));

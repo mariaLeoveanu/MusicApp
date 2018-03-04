@@ -35,16 +35,16 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
 
         //set images and texts for the textviews and imageviews for albums
 
-        ImageView albumImage = (ImageView) albumView.findViewById(R.id.album_art_iv);
+        ImageView albumImage = albumView.findViewById(R.id.album_art_iv);
         albumImage.setImageResource(al.getAlbumArt());
 
-        TextView albumName = (TextView) albumView.findViewById(R.id.album_name_tv);
+        TextView albumName = albumView.findViewById(R.id.album_name_tv);
         albumName.setText(al.getAlbumName());
 
-        TextView artistName = (TextView) albumView.findViewById(R.id.artist_tv);
+        TextView artistName = albumView.findViewById(R.id.artist_tv);
         artistName.setText(al.getArtist());
 
-        TextView numSongs = (TextView) albumView.findViewById(R.id.album_songs_number_tv);
+        TextView numSongs = albumView.findViewById(R.id.album_songs_number_tv);
         numSongs.setText(al.getNumberOfSongs() + " songs");
 
         return albumView;

@@ -7,4 +7,9 @@
     <string name="songs_label">Songs</string>
     <string name="toast_paused">Paused</string>
     <string name="toast_playing">Playing</string>
+    <string name="start">00:00</string>
+    <string name="previous">Goes to previous song</string>
+    <string name="play_pause">Press to play or pause the current track</string>
+    <string name="next">Goes to next song</string>
+    <string name="album_art">The album image</string>
 </resources>
