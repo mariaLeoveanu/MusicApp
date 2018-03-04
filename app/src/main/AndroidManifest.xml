@@ -18,13 +18,11 @@
         </activity>
         <activity android:name=".SongsActivity"
             android:label="@string/songs_label"
-            android:theme="@style/SongsTheme"
-            android:parentActivityName=".MainActivity"/>
+            android:theme="@style/SongsTheme" />
 
         <activity android:name=".MusicPlayer"
             android:label="@string/now_playing_label"
-            android:theme="@style/NowPlayingTheme"
-            android:parentActivityName=".SongsActivity"/>
+            android:theme="@style/NowPlayingTheme" />
 
     </application>
 
