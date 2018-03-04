@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
+            android:textSize="@dimen/sp20"
             tools:text="Kendrick Lamar" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textSize="25sp"
+            android:textSize="@dimen/sp25"
             tools:text="DNA" />
 
         <SeekBar
@@ -43,20 +43,20 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp">
+            android:layout_marginLeft="@dimen/dp25">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
-                android:textSize="15sp"
+                android:textSize="@dimen/sp15"
                 android:layout_alignParentLeft="true"/>
             <TextView
                 android:id="@+id/end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="3:45"
-                android:textSize="15sp"
-                android:layout_marginRight="15dp"
+                android:textSize="@dimen/sp15"
+                android:layout_marginRight="@dimen/dp15"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
 
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/previous"
-                android:layout_marginLeft="20dp"/>
+                android:layout_marginLeft="@dimen/dp20"/>
 
             <ImageView
                 android:id="@+id/pause_play_button"
@@ -85,8 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="@dimen/dp20"
                 android:src="@drawable/next" />
 
         </RelativeLayout>
@@ -96,8 +95,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Go to songs"
-        android:layout_marginTop="10dp"/>
+        android:text="@string/now_playing_button"
+        android:layout_marginTop="@dimen/dp10"/>
 
     </LinearLayout>
 

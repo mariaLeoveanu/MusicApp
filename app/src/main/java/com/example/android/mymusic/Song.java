@@ -10,13 +10,11 @@ import java.time.Duration;
 public class Song implements Serializable{
     private String name;
     private String artist;
-    private int imageResource;
     private String duration;
 
-    public Song (String songName, String songArtist, int songAlbumImage, String length){
+    public Song (String songName, String songArtist, String length){
         name = songName;
         artist = songArtist;
-        imageResource = songAlbumImage;
         duration = length;
     }
 
@@ -25,9 +23,6 @@ public class Song implements Serializable{
     }
     public String getArtist(){
         return artist;
-    }
-    public int getImageResource(){
-        return imageResource;
     }
     public String getDuration(){
         return duration;

@@ -3,11 +3,9 @@ package com.example.android.mymusic;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,15 +30,18 @@ public class MusicPlayer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_player);
-        playPauseIcon = (ImageView) findViewById(R.id.pause_play_button);
-        nextIcon = (ImageView) findViewById(R.id.next_button);
-        previousIcon = (ImageView)findViewById(R.id.previous_button);
-        endTime = (TextView) findViewById(R.id.end_time);
-        backSongs = (Button)findViewById(R.id.back_to_songs);
+
+        playPauseIcon = findViewById(R.id.pause_play_button);
+        nextIcon = findViewById(R.id.next_button);
+        previousIcon = findViewById(R.id.previous_button);
+        endTime = findViewById(R.id.end_time);
+        backSongs = findViewById(R.id.back_to_songs);
+
         Intent playerIntent = getIntent();
-        i = playerIntent.getIntExtra("Index",-1000);
+        i = playerIntent.getIntExtra("Index",-1000); //put -1000 to have an obvious error if i don't get any index through intent
         album = (Album) playerIntent.getSerializableExtra("CurrentAlbum");
-        currentSong = album.getSongs().get(i);
+        currentSong = album.getSongs().get(i);// get album at index i
+
         setAlbumContents();
         setPlayPauseIcon();
         playNextSong();
@@ -69,12 +70,12 @@ public class MusicPlayer extends AppCompatActivity {
                 if (isPlaying) {
                     playPauseIcon.setImageResource(R.drawable.play);
                     isPlaying = false;
-                    Toast toast = Toast.makeText(MusicPlayer.this, "paused", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(MusicPlayer.this, R.string.toast_paused, Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
                     playPauseIcon.setImageResource(R.drawable.pause_button);
                     isPlaying = true;
-                    Toast toast = Toast.makeText(MusicPlayer.this, "playing", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(MusicPlayer.this, R.string.toast_playing, Toast.LENGTH_SHORT);
                     toast.show();
                 }
 
@@ -87,9 +88,8 @@ public class MusicPlayer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<Song> songsInAlbum = album.getSongs();
-                String s = currentSong.getName();
                 if (i==songsInAlbum.size()-1) {
-                    i=0;
+                    i=0; //if on last position, move to the first song in playlist
                     currentSong = songsInAlbum.get(0);
                 }else {
                     i++;
@@ -105,7 +105,7 @@ public class MusicPlayer extends AppCompatActivity {
             public void onClick(View view) {
                 ArrayList<Song> songsInAlbum = album.getSongs();
                 if (i==0) {
-                    i = songsInAlbum.size()-1;
+                    i = songsInAlbum.size()-1; //if on first position, get to the last one in the playlist
                     currentSong = songsInAlbum.get(i);
                 }else {
                     i--;
@@ -120,7 +120,9 @@ private void backToSongs (){
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MusicPlayer.this,SongsActivity.class);
+                //sending the same information as MainActivity, as Songs activity only needs the songs in the specific album
                 i.putExtra("CurrentAlbum", album);
+
                 startActivity(i);
             }
         });

@@ -2,10 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/album_layout"
-    android:padding="16dp"
+    android:padding="@dimen/dp16"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/album_art_iv"
@@ -22,8 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/album_art_iv"
-        android:layout_marginTop="5dp"
-        android:textColor="#000000"
+        android:layout_marginTop="@dimen/dp5"
         android:textSize="20sp"
         tools:text="DNA" />
 
@@ -32,9 +30,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/album_name_tv"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="@dimen/dp3"
         android:textColor="#000000"
-        android:textSize="15sp"
+        android:textSize="@dimen/sp15"
         tools:text="Kendrick Lamar" />
 
     <TextView
@@ -43,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/artist_tv"
         android:textColor="#000000"
-        android:textSize="13sp"
+        android:textSize="@dimen/sp13"
         tools:text="12 songs" />
 
 

@@ -1,6 +1,7 @@
 package com.example.android.mymusic;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,6 +18,7 @@ public class SongsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
+
         //getting the intent
         Intent albumIntent = getIntent();
 
@@ -42,11 +44,12 @@ public class SongsActivity extends AppCompatActivity {
 
             }
         });
-        albumsButton = (Button) findViewById(R.id.back_to_albums);
+        albumsButton = findViewById(R.id.back_to_albums);
         albumsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(SongsActivity.this, MainActivity.class);
+                //no need to put extra, MainActivity only displays albums
                 startActivity(i);
             }
         });

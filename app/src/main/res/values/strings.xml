@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">MyMusic</string>
+    <string name="app_name">My Music</string>
     <string name="font">monospace</string>
+    <string name="now_playing_label">Now Playing</string>
+    <string name="now_playing_button">Go to songs</string>
+    <string name="songs_button">Go to albums</string>
+    <string name="songs_label">Songs</string>
+    <string name="toast_paused">Paused</string>
+    <string name="toast_playing">Playing</string>
 </resources>

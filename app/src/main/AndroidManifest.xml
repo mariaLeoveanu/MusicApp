@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="My Music"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -17,14 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".SongsActivity"
-            android:label="Songs"
+            android:label="@string/songs_label"
             android:theme="@style/SongsTheme"
-           />
-
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".MusicPlayer"
-            android:label="Now playing"
-            android:theme="@style/NowPlayingTheme" />
+            android:label="@string/now_playing_label"
+            android:theme="@style/NowPlayingTheme"
+            android:parentActivityName=".SongsActivity"/>
+
     </application>
 
 </manifest>
