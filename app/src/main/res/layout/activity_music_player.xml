@@ -102,13 +102,6 @@
 
         </RelativeLayout>
 
-    <Button
-        android:id="@+id/back_to_songs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/now_playing_button"
-        android:layout_marginTop="@dimen/dp10"/>
 
     </LinearLayout>
     </ScrollView>

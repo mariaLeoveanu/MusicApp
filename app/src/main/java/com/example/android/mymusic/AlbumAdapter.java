@@ -33,7 +33,7 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
         }
         Album al = getItem(position);
 
-        //set images and texts for the textviews and imageviews for albums
+        //set images and texts for the text views and image views for albums
 
         ImageView albumImage = albumView.findViewById(R.id.album_art_iv);
         albumImage.setImageResource(al.getAlbumArt());

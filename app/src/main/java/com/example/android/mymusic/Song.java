@@ -11,10 +11,12 @@ public class Song implements Serializable{
     private String name;
     private String artist;
     private String duration;
+    private int imageResource;
 
-    public Song (String songName, String songArtist, String length){
+    public Song (String songName, String songArtist, int image, String length){
         name = songName;
         artist = songArtist;
+        imageResource = image;
         duration = length;
     }
 
@@ -26,6 +28,9 @@ public class Song implements Serializable{
     }
     public String getDuration(){
         return duration;
+    }
+    public int getImageResource(){
+        return imageResource;
     }
 
 
